@@ -7,17 +7,27 @@ import {
   InputLabel,
   LoginWrapper,
 } from "./Login.styles";
-import { useNavigate } from "react-router-dom";
+import { instance } from "../../Services/api";
+import { useAppContext } from "../../Services/app-context";
 
 const Login: FC = () => {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
-  const navigate = useNavigate();
+  const { setSlToken } = useAppContext();
 
-  const submitFeedbackHandler = (e: FormEvent): void => {
+  const submitFeedbackHandler = async (e: FormEvent): Promise<void> => {
     e.preventDefault();
-    navigate("/posts");
+    const { data: authResponseData } = await instance.post("/register", {
+      client_id: "ju16a6m81mhid5ue1z3v2g0uh",
+      email,
+      name,
+    });
+    if (authResponseData) {
+      setSlToken(authResponseData.data.sl_token);
+      localStorage.setItem("slToken", authResponseData.data.sl_token);
+    }
   };
+
   return (
     <LoginWrapper>
       <LoginForm onSubmit={submitFeedbackHandler}>

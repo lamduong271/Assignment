@@ -1,15 +1,23 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React from "react";
 import Login from "./Components/Login/Login";
-import Post from "./Components/Post/Post";
+import Post from "./Components/PostReader/PostReader";
+import { AppContextProvider, useAppContext } from "./Services/app-context";
+
+const Components = () => {
+  const { slToken } = useAppContext();
+  const localslToken = localStorage.getItem("slToken");
+  return (
+    <React.Fragment>
+      {slToken || localslToken ? <Post /> : <Login />}
+    </React.Fragment>
+  );
+};
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Login />}></Route>
-        <Route path='/posts' element={<Post />}></Route>
-      </Routes>
-    </BrowserRouter>
+    <AppContextProvider>
+      <Components />
+    </AppContextProvider>
   );
 }
 
