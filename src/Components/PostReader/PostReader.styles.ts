@@ -2,15 +2,8 @@ import styled, { css } from "styled-components";
 
 const sharedStyle = css`
   flex: 1 0 50%;
-  background: lightgreen;
-`;
-
-const inputSharedStyled = css`
-  height: 40px;
-  width: 70%;
-  margin: 30px;
-  padding: 0 20px;
-  outline: none;
+  box-sizing: border-box;
+  padding: 20px;
 `;
 
 export const PostsContainer = styled.div`
@@ -25,8 +18,4 @@ export const PostListContainer = styled.div`
 
 export const SenderContainer = styled.div`
   ${sharedStyle}
-`;
-
-export const FindPostInput = styled.input`
-  ${inputSharedStyled}
 `;

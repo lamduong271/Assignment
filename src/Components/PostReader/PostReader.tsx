@@ -1,12 +1,12 @@
 import React, { FC, useEffect, useState } from "react";
 import { instance } from "../../Services/api";
 import { useAppContext } from "../../Services/app-context";
+import PostList from "../Posts/PostList";
 import SenderList from "../SenderList/SenderList";
 import {
   PostsContainer,
   SenderContainer,
   PostListContainer,
-  FindPostInput,
 } from "./PostReader.styles";
 
 export interface PostReaderType {
@@ -48,7 +48,7 @@ const Post: FC = () => {
           <SenderList allPosts={allPosts} />
         </SenderContainer>
         <PostListContainer>
-          <FindPostInput placeholder='Enter post content'></FindPostInput>
+          <PostList allPosts={allPosts}></PostList>
         </PostListContainer>
       </PostsContainer>
     );
