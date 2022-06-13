@@ -49,8 +49,10 @@ const PostList: FC<{ allPosts: PostReaderType }> = ({ allPosts }) => {
           onChange={(e) => setSearchPostValue(e.target.value)}
           placeholder='Enter post content'
         ></FindPostInput>
-        <SortButton onClick={() => setSortOrder("asc")}>sort asc</SortButton>
-        <SortButton onClick={() => setSortOrder("desc")}>sort desc</SortButton>
+        <SortButton onClick={() => setSortOrder("asc")}>Latest date</SortButton>
+        <SortButton onClick={() => setSortOrder("desc")}>
+          Oldest date
+        </SortButton>
       </PostInputWrapper>
       <ListWrapper>
         {currentSender && <div>Post by: {currentSender}</div>}

@@ -24,6 +24,6 @@ it("Filter Sender by search text", async () => {
     "Enter a sender name"
   ) as HTMLInputElement;
   fireEvent.change(searchText, { target: { value: "User 1" } });
-  expect(screen.getByText("User 1: 1")).toBeInTheDocument();
-  expect(screen.queryByText("User 2: 3")).not.toBeInTheDocument();
+  expect(screen.getByText("User 1")).toBeInTheDocument();
+  expect(screen.queryByText("User 2")).not.toBeInTheDocument();
 });

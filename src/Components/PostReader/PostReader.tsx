@@ -24,7 +24,7 @@ export interface SinglePostReaderType {
   type: string;
 }
 
-const Post: FC = () => {
+const PostReader: FC = () => {
   const [allPosts, setAllPosts] = useState<PostReaderType | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const { slToken } = useAppContext();
@@ -61,4 +61,4 @@ const Post: FC = () => {
   );
 };
 
-export default Post;
+export default PostReader;

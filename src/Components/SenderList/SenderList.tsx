@@ -38,7 +38,10 @@ const SenderList: FC<{ allPosts: PostReaderType }> = ({ allPosts }) => {
         {filterName(searchValue).map((name: string, index: number) => (
           <React.Fragment key={index}>
             <SenderListItem onClick={() => setCurrentSender(name)}>
-              {name}: {countingPostBySender(name)}
+              {name}
+              <span style={{ float: "right" }}>
+                {countingPostBySender(name)}
+              </span>
             </SenderListItem>
           </React.Fragment>
         ))}

@@ -1,16 +1,6 @@
-import { fireEvent, screen, waitFor } from "@testing-library/react";
-import { instance } from "../../Services/api";
+import { fireEvent, screen } from "@testing-library/react";
 import { render } from "../../Services/test";
-import Login, { getAuthResponseDate } from "./Login";
-
-const mockResponse = {
-  data: {
-    client_id: "ju16a6m81mhid5ue1z3v2g0uh",
-    email: "abc@abc.com",
-    sl_token: "smslt_83decac87cd54_936c8e0038a1c2",
-  },
-  meta: { request_id: "I1ZWitGfkz_aZNWAk7HFSh3TdnHclOWb" },
-};
+import Login from "./Login";
 
 test("Render Login screen", () => {
   render(<Login />);

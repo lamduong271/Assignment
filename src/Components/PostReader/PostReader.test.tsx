@@ -27,6 +27,6 @@ it("renders with mock response", async () => {
   });
 
   await waitFor(() => {
-    expect(screen.getByText("User 1: 1")).toBeInTheDocument();
+    expect(screen.getByText("User 1")).toBeInTheDocument();
   });
 });
