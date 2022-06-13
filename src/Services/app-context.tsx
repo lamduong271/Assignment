@@ -6,7 +6,7 @@ type AppContextValues = {
   currentSender: string;
   setCurrentSender: React.Dispatch<React.SetStateAction<string>>;
 };
-const AppContext = createContext<AppContextValues | null>(null);
+export const AppContext = createContext<AppContextValues | null>(null);
 
 export const useAppContext = (): AppContextValues => {
   const ctxValue = useContext(AppContext);

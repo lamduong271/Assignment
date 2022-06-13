@@ -19,3 +19,12 @@ export const PostListContainer = styled.div`
 export const SenderContainer = styled.div`
   ${sharedStyle}
 `;
+
+export const Loading = styled.div`
+  width: 100%;
+  padding: 10px;
+  background-color: #349fad;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+`;
