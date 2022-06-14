@@ -1,5 +1,12 @@
 import { createContext, FC, ReactNode, useContext, useState } from "react";
 
+const mockedUsedNavigate = jest.fn();
+
+jest.mock("react-router-dom", () => ({
+  ...(jest.requireActual("react-router-dom") as any),
+  useNavigate: () => mockedUsedNavigate,
+}));
+
 type AppContextValues = {
   slToken: string;
   setSlToken: React.Dispatch<React.SetStateAction<string>>;

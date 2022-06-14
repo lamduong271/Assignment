@@ -29,7 +29,7 @@ const PostReader: FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const { slToken } = useAppContext();
   useEffect(() => {
-    const getAllPosts = async () => {
+    const getAllPosts = async (): Promise<void> => {
       setLoading(true);
       const response = await instance.get("/posts", {
         params: {

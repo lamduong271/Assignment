@@ -8,6 +8,7 @@ import {
 } from "./Login.styles";
 import { instance } from "../../Services/api";
 import { useAppContext } from "../../Services/app-context";
+import { useNavigate } from "react-router-dom";
 
 interface AuthDataType {
   client_id: string;
@@ -33,6 +34,7 @@ const Login: FC = () => {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const { setSlToken } = useAppContext();
+  const navigate = useNavigate();
 
   const submitFeedbackHandler = async (e: FormEvent): Promise<void> => {
     e.preventDefault();
@@ -40,6 +42,7 @@ const Login: FC = () => {
     if (authResponseData) {
       setSlToken(authResponseData.data.sl_token);
       localStorage.setItem("slToken", authResponseData.data.sl_token);
+      navigate("/posts");
     }
   };
 

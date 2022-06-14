@@ -1,13 +1,15 @@
 import styled from "styled-components";
 
-export const SenderListItem = styled.li`
+export const SenderListItem = styled.li<{ highlight: boolean }>`
   list-style: none;
   padding: 8px;
-  border: 1px solid;
+  border: ${(props) =>
+    props.highlight ? "2px solid  orange" : "1px solid  black"};
+  color: ${(props) => (props.highlight ? "orange" : "black")};
   margin: 8px 0;
   cursor: pointer;
   &:hover {
-    color: red;
+    color: orange;
   }
 `;
 
