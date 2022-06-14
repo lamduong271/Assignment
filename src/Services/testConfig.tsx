@@ -55,4 +55,11 @@ export const mockAllPost = {
   ],
 };
 
+const mockedUsedNavigate = jest.fn();
+
+jest.mock("react-router-dom", () => ({
+  ...(jest.requireActual("react-router-dom") as any),
+  useNavigate: () => mockedUsedNavigate,
+}));
+
 export { customRender as render };

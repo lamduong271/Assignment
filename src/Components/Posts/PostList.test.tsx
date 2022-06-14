@@ -1,6 +1,6 @@
 import { fireEvent, screen } from "@testing-library/react";
 import { AppContext } from "../../Services/app-context";
-import { mockAllPost, render } from "../../Services/test";
+import { mockAllPost, render } from "../../Services/testConfig";
 import PostList from "./PostList";
 
 const mockAllPosts = {

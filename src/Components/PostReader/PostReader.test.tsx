@@ -1,5 +1,5 @@
 import { screen, waitFor } from "@testing-library/react";
-import { mockAllPost, render } from "../../Services/test";
+import { mockAllPost, render } from "../../Services/testConfig";
 import PostReader from "./PostReader";
 import { instance } from "../../Services/api";
 
